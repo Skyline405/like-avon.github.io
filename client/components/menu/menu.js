@@ -3,17 +3,22 @@ import { NavLink as Link } from 'react-router-dom';
 
 import './menu.scss';
 
-export default class Menu extends React.Component {
-	render() {
-		return (
-			<ul className="navbar-nav mr-auto" data-toggle="collapse" data-target="#navbarSupportedContent">
-				<Link className="nav-item nav-link" to="/" exact>Главная</Link>
-				<Link className="nav-item nav-link" to="/catalog">Каталог онлайн</Link>
-				<Link className="nav-item nav-link" to="/start-earn">Начать зарабатывать</Link>
-				<a className="nav-item nav-link" href="https://my.avon.ru/magazin/marina54nsk" target="_blank">Магазин</a>
-				<Link className="nav-item nav-link" to="/contacts">Контакты</Link>
-				<Link className="nav-item nav-link" to="/for-employers">Для сотрудников</Link>
-			</ul>
-		);
-	}
-}
+const createItems = (menuItems) => {
+	return menuItems.map( (item, i) => {
+		if (item.path) {
+			return <Link className="nav-item nav-link pl-3 pl-lg-2" key={i} to={item.path} exact={i === 0}>{item.name}</Link>;
+		}
+		return <a className="nav-item nav-link pl-3 pl-lg-2" key={i} href={item.href} target="_blank">{item.name}</a>
+	});
+};
+
+export default ({ menuItems, className }) => (
+	<div>
+		<ul className="navbar-nav mr-auto d-lg-none" data-toggle="collapse" data-target="#navbarSupportedContent">
+			{createItems(menuItems)}
+		</ul>
+		<ul className="navbar-nav mr-auto d-none d-lg-flex">
+			{createItems(menuItems)}
+		</ul>
+	</div>
+);

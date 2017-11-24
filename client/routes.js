@@ -7,10 +7,19 @@ import Home from './pages/home/home';
 import About from './pages/about/about';
 import NoMatch from './pages/404/404';
 
+const menu = [
+	{ path: '/', name: 'Главная' },
+	{ path: '/catalog', name: 'Каталог онлайн' },
+	{ path: '/business', name: 'Начать зарабатывать' },
+	{ href: 'https://my.avon.ru/magazin/marina54nsk', name: 'Магазин' },
+	{ path: '/contacts', name: 'Контакты' },
+	{ path: '/for-employers', name: 'Сотрудникам' },
+];
+
 export default () => (
 	<Router>
 		<div>
-			<Header/>
+			<Header menuItems={menu} />
 			<div>
 				<Switch>
 					<Route exact path='/' component={Home} />

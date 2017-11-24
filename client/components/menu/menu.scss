@@ -1,0 +1,12 @@
+.navbar-nav .nav-link.active {
+	background: #dc3545 !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color: white;
+
+	&:hover {
+		background: rgba(#fff, 0.5);
+		color: white;
+	}
+}

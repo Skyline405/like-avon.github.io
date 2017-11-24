@@ -1,22 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink as Link } from 'react-router-dom';
 
 import './menu.scss';
 
 export default class Menu extends React.Component {
 	render() {
 		return (
-			<div className="container">
-				<div className="row">
-					<div className="col-md-4">
-
-					</div>
-					<div className="col-md-8">
-						<Link to="/">Home</Link>
-						<Link to="/about">About</Link>
-					</div>
-				</div>
-			</div>
+			<ul className="navbar-nav mr-auto">
+				<Link className="nav-item nav-link" to="/" exact>Главная</Link>
+				<Link className="nav-item nav-link" to="/catalog">Каталог онлайн</Link>
+				<Link className="nav-item nav-link" to="/start-earn">Начать зарабатывать</Link>
+				<Link className="nav-item nav-link" to="https://my.avon.ru/magazin/marina54nsk">Магазин</Link>
+				<Link className="nav-item nav-link" to="/contacts">Контакты</Link>
+				<Link className="nav-item nav-link" to="/for-employers">Для сотрудников</Link>
+			</ul>
 		);
 	}
 }

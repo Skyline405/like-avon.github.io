@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -29,6 +30,18 @@ module.exports = {
 				}, {
 					loader: "sass-loader" // compiles Sass to CSS
 				}]
+			},
+			{
+				test: /\.(png|jpg|gif)$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							outputPath: 'images/',
+							limit: 8192
+						}
+					}
+				]
 			}
 		]
 	},
@@ -37,6 +50,14 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: './client/index.html',
 			inject: "body"
+		}),
+		new webpack.ProvidePlugin({
+			$: 'jquery',
+			jQuery: 'jquery',
+			'window.jQuery': 'jquery',
+			/*Popper: ['popper.js', 'default']*/
+			Util: "exports-loader?Util!bootstrap/js/dist/util"/*,
+			Dropdown: "exports-loader?Dropdown!bootstrap/js/dist/dropdown"*/
 		})
 	],
 

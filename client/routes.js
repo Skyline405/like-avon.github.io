@@ -1,16 +1,22 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Menu from './components/menu/menu';
+import Header from './components/header/header';
 import Home from './pages/home/home';
 import About from './pages/about/about';
+import NoMatch from './pages/404/404';
 
 export default () => (
 	<Router>
 		<div>
-			<Menu/>
-			<Route exact path='/' component={Home} />
-			<Route path='/about' component={About} />
+			<Header/>
+			<div className="container">
+				<Switch>
+					<Route exact path='/' component={Home} />
+					<Route path='/about' component={About} />
+					<Route component={NoMatch} />
+				</Switch>
+			</div>
 		</div>
 	</Router>
 );

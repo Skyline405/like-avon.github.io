@@ -17,8 +17,10 @@ export default ({ menuItems }) => (
 				<img src={Logo} width="80" alt="Like Avon"/>
 			</Link>
 			<div className="order-lg-2">
-				<button className="btn btn-danger mr-2 d-none d-sm-inline-block">Регистрация</button>
-				<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<Link className="btn btn-danger mr-2 d-none d-sm-inline-block" to="/register">
+					Регистрация
+				</Link>
+				<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
 					<span className="navbar-toggler-icon"></span>
 				</button>
 			</div>

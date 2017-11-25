@@ -10,7 +10,10 @@ import NoMatch from './pages/404/404';
 const menu = [
 	{ path: '/', name: 'Главная' },
 	{ path: '/catalog', name: 'Каталог онлайн' },
-	{ path: '/business', name: 'Начать зарабатывать' },
+	{ name: 'Начать зарабатывать', items: [
+		{ path: '/business', name: 'Бизнес с Avon' },
+		{ path: '/register', name: 'Стать представителем' },
+	] },
 	{ href: 'https://my.avon.ru/magazin/marina54nsk', name: 'Магазин' },
 	{ path: '/contacts', name: 'Контакты' },
 	{ path: '/for-employers', name: 'Сотрудникам' },

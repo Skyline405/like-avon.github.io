@@ -1,21 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import Page from '../../components/page/page';
 import Slider from '../../components/slider/slider';
 
-const imgPlaceholderUrl = 'http://lorempixel.com/1920/1200/';
+export default class Catalog extends Component {
 
-const cats = ['cats', 'city', 'food', 'people', 'nature', 'sport', 'transport'];
+	constructor(props) {
+		super(props);
 
-let srcList = new Array(10).fill(imgPlaceholderUrl).map( (src, i) => src + cats[i % cats.length] );
+		this.state = {
+			srcList: []
+		};
+	}
 
-export default () => (
-	<Page title="Каталог №16">
+	componentDidMount() {
+		this.getSrcList();
+	}
 
-		<Slider className="mt-2" srcList={[
-			//'http://like-avon.loc/catalogs/16_017/Page_00001.jpg',
-			...srcList
-		]} />
+	getSrcList() {
+		return $.getJSON('/api/get/catalog/16_2017')
+			.then( result  => this.setState({ srcList: result }));
+	}
 
-	</Page>
-);
+	render() {
+		const { srcList } = this.state;
+
+		console.log(srcList);
+
+		return (
+			<Page title="Каталог №16">
+
+				<Slider className="mt-2" srcList={srcList} />
+
+			</Page>
+		);
+	}
+
+};

@@ -62,9 +62,13 @@ module.exports = {
 	],
 
 	devServer: {
-		proxy: {
-			'/api': 'http://like-avon.loc/api/'
-		},
+		host: '0.0.0.0',
+		port: 8000,
+		proxy: [{
+			context: ["/res", "/api"],
+			target: "http://like-avon.loc",
+			changeOrigin: true
+		}],
 		contentBase: path.join(__dirname, 'public'),
 		compress: true,
 		historyApiFallback: true,
@@ -72,6 +76,8 @@ module.exports = {
 		https: false, // true for self-signed, object for cert authority
 		noInfo: true, // only errors & warns on hot reload
 	},
+
+	devtool: 'eval-source-map',
 
 	target: 'web'
 };

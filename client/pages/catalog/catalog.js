@@ -25,8 +25,6 @@ export default class Catalog extends Component {
 	render() {
 		const { srcList } = this.state;
 
-		console.log(srcList);
-
 		return (
 			<Page title="Каталог №16">
 

@@ -6,8 +6,8 @@ body {
 	background-size: cover;
 }
 
-@for $i from 1 through 10 {
-	$height: $i * 10;
+@for $i from 1 through 20 {
+	$height: $i * 5;
 	.min-h-#{$height}vh {
 		min-height: $height + vh;
 	}
@@ -37,5 +37,9 @@ body {
 	background: white;
 	border-radius: 5px;
 	@extend .page-shadow;
-	@extend .min-h-60vh;
+	@extend .min-h-65vh;
+}
+
+.form-block	{
+	@extend .my-4;
 }

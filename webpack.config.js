@@ -63,7 +63,7 @@ module.exports = {
 
 	devServer: {
 		proxy: {
-			'/api': 'http://localhost:3000'
+			'/api': 'http://like-avon.loc/api/'
 		},
 		contentBase: path.join(__dirname, 'public'),
 		compress: true,

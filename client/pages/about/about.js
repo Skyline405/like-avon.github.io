@@ -1,9 +1,42 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default class About extends React.Component {
-	render() {
-		return (
-			<h1>About page!</h1>
-		);
-	}
-}
+import Page from '../../components/page/page';
+
+export default () => (
+	<Page title="Почему Avon?">
+		<p className="lead">
+			В Avon каждый может исполнить мечты, Avon понимает, что любят женщины!
+		</p>
+		<p className="lead">
+			Компания Avon предлагает Вам:
+			<ul>
+				<li>Лёгкий старт — бизнес без вложения капитала.</li>
+				<li>Гибкий график.</li>
+				<li>Участие в программах поощрения.</li>
+				<li>Призы и скидки от Avon.</li>
+				<li>Современный подход.</li>
+				<li>Стабильность и рост дохода.</li>
+			</ul>
+		</p>
+		<p className="lead">
+			Вы можете стать клиентом и покупать замечательную продукцию!
+			Смотрите <Link to="/catalog">онлайн каталог</Link>, выбирайте и заказывайте любимую продукцию.
+		</p>
+		<p className="lead">
+			Получайте подарки за ваши заказы!
+			Вы можете <Link to="/register">зарегистрироваться онлайн</Link>, <Link to="/register">стать представителем</Link> или <Link to="/register">прямым покупателем</Link> компании Avon
+			и получать <span className="text-danger">скидку до 31%</span>.
+		</p>
+		<p className="lead">
+			Регистрация абсолютно бесплатна и не займет много времени!
+		</p>
+		<p className="lead">
+			Вы сможете принимать участие в различных акциях, организованных компанией и получать великолепные подарки!
+		</p>
+		<p className="lead">
+			Вы можете <Link to="/business">стать координатором</Link>,
+			создать свой собственный бизнес со свободным графиком работы и достойным доходом без вложений!
+		</p>
+	</Page>
+);

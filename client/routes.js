@@ -7,6 +7,7 @@ import Footer from './components/footer/footer';
 import Home from './pages/home/home';
 import Catalog from './pages/catalog/catalog';
 import Register from './pages/register/register';
+import Business from './pages/business/business';
 import About from './pages/about/about';
 import Contacts from './pages/contacts/contacts';
 import NoMatch from './pages/404/404';
@@ -30,16 +31,20 @@ export default () =>
 <Router>
 	<div>
 		<Header menuItems={menu} />
+
 		<div>
 			<Switch>
 				<Route exact path='/' component={Home} />
 				<Route path='/catalog' component={Catalog} />
 				<Route path='/register' component={Register} />
+				<Route path='/business' component={Business} />
 				<Route path='/about' component={About} />
 				<Route path='/contacts' component={Contacts} />
 				<Route component={NoMatch} />
 			</Switch>
 		</div>
+
 		<Footer/>
+
 	</div>
 </Router>;

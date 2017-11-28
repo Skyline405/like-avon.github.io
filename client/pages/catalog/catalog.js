@@ -27,8 +27,10 @@ export default class Catalog extends Component {
 
 		return (
 			<Page title="Каталог №16">
-
-				<Slider className="mt-2" srcList={srcList} />
+				{srcList.length
+					? <Slider className="mt-2" srcList={srcList} />
+					: <div className="lead text-center">Загрузка...</div>
+				}
 
 			</Page>
 		);

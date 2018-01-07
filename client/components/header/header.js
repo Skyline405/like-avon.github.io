@@ -6,7 +6,7 @@ import 'bootstrap/js/dist/util';
 
 import MainMenu from '../menu/menu';
 
-import Logo from './images/logo.png';
+import Logo from '../../images/logo.png';
 
 import './header.scss';
 

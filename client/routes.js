@@ -16,8 +16,8 @@ const menu = [
 	// { path: '/', name: 'Главная', exact: true },
 	{ path: '/catalog', name: 'Каталог онлайн' },
 	{ name: 'Начать зарабатывать', items: [
-		{ path: '/business', name: 'Бизнес с Avon' },
 		{ path: '/register', name: 'Стать представителем' },
+		{ path: '/business', name: 'Бизнес с Avon' },
 	] },
 	{ href: 'https://my.avon.ru/magazin/marina54nsk', name: 'Магазин' },
 	{ path: '/contacts', name: 'Контакты' },

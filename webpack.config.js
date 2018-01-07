@@ -49,7 +49,8 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: './client/index.html',
-			inject: "body"
+			inject: "body",
+			favicon: './client/images/logo.png'
 		}),
 		new webpack.ProvidePlugin({
 			$: 'jquery',

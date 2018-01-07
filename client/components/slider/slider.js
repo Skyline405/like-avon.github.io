@@ -11,12 +11,14 @@ export default class Slider extends Component {
 		};
 	}
 
-	onPrevClick() {
-		this.moveTo(this.state.selectedItem - 1);
+	onPrevClick(e) {
+		e && e.preventDefault();
+		return this.moveTo(this.state.selectedItem - 1);
 	};
 
-	onNextClick() {
-		this.moveTo(this.state.selectedItem + 1);
+	onNextClick(e) {
+		e && e.preventDefault();
+		return this.moveTo(this.state.selectedItem + 1);
 	};
 
 	moveTo(position) {
@@ -33,6 +35,7 @@ export default class Slider extends Component {
 		this.setState({
 			selectedItem: position
 		});
+		return false;
 	};
 
 	render() {
@@ -54,13 +57,13 @@ export default class Slider extends Component {
 
 					</div>
 
-					<a className="carousel-control-prev" onClick={this.onPrevClick.bind(this)}>
+					<a href="#" className="carousel-control-prev" onClick={this.onPrevClick.bind(this)}>
 						<span className="carousel-control-prev-icon" aria-hidden="true"></span>
 						<span className="sr-only">Previous</span>
 					</a>
 
-					<a className="carousel-control-next" onClick={this.onNextClick.bind(this)}>
-						<span className="carousel-control-next-icon" aria-hidden="true"></span>
+					<a href="#" className="carousel-control-next" onClick={this.onNextClick.bind(this)}>
+						<span className="carousel-control-next-icon png-shadow" aria-hidden="true"></span>
 						<span className="sr-only">Next</span>
 					</a>
 				</div>

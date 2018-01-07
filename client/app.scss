@@ -43,3 +43,29 @@ body {
 .form-block	{
 	@extend .my-4;
 }
+
+.icon {
+	display: inline-block;
+	background-size: cover;
+	width: 32px;
+	height: 32px;
+	&.email {
+		background-image: url('images/email.png');
+	}
+	&.watsapp {
+		background-image: url('images/watsapp.png');
+	}
+	&.viber {
+		background-image: url('images/viber.png');
+	}
+	&.vk {
+		background-image: url('images/vk.png');
+	}
+	&.instagram {
+		background-image: url('images/instagram.png');
+	}
+}
+
+.carousel-control-prev, .carousel-control-next {
+	background-color: rgba(0,0,0,.5);
+}
